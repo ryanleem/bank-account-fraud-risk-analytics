@@ -1,0 +1,5 @@
+-- 02_data_quality.sql
+-- Purpose: validate the staged source data before analysis.
+--
+-- Planned checks include row counts, duplicate detection, null profiling,
+-- categorical-value validation, range checks, and fraud-label distribution.
