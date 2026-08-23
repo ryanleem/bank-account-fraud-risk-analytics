@@ -1,0 +1,5 @@
+-- 05_fraud_patterns.sql
+-- Purpose: investigate suspicious fraud patterns and higher-risk combinations.
+--
+-- This file will contain grouped analyses, interaction effects, and pattern
+-- discovery queries supported by the actual BAF fields.
