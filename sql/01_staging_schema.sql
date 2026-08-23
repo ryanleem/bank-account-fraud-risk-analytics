@@ -1,0 +1,5 @@
+-- 01_staging_schema.sql
+-- Purpose: create the raw/staging layer used to load the selected BAF dataset.
+--
+-- We will define the actual columns and PostgreSQL data types only after
+-- inspecting the source files and official field definitions.
