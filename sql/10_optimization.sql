@@ -1,0 +1,5 @@
+-- 10_optimization.sql
+-- Purpose: measure and improve PostgreSQL query performance.
+--
+-- We will benchmark real analytical queries with EXPLAIN ANALYZE, identify
+-- bottlenecks, add justified indexes, and compare execution plans and runtimes.
