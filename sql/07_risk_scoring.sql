@@ -1,0 +1,5 @@
+-- 07_risk_scoring.sql
+-- Purpose: build an explainable SQL-based fraud risk score.
+--
+-- Risk rules will be derived from patterns found earlier rather than chosen
+-- arbitrarily. Each rule should be interpretable and independently testable.
