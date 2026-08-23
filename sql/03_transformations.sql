@@ -1,0 +1,5 @@
+-- 03_transformations.sql
+-- Purpose: transform validated staging data into analysis-ready structures.
+--
+-- Transformations will be based on real analytical needs discovered during
+-- profiling; we will avoid unnecessary normalization or derived fields.
