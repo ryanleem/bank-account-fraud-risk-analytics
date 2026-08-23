@@ -1,0 +1,6 @@
+-- 09_views.sql
+-- Purpose: create reusable analytical views after the core analysis is stable.
+--
+-- We will only add views that make repeated fraud analysis clearer or faster.
+-- Materialized views will be used only when repeated expensive aggregation
+-- actually justifies them.
