@@ -1,0 +1,5 @@
+-- 08_rule_validation.sql
+-- Purpose: evaluate the fraud risk rules against known labels.
+--
+-- Planned metrics include true positives, false positives, false negatives,
+-- true negatives, precision, recall, and false-positive rate.
