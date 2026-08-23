@@ -1,0 +1,5 @@
+-- 04_baseline_analysis.sql
+-- Purpose: establish baseline fraud metrics before searching for complex patterns.
+--
+-- Planned work includes overall fraud rate, volume by period, fraud prevalence
+-- across major applicant groups, and other descriptive benchmarks.
