@@ -1,0 +1,5 @@
+-- 06_advanced_analysis.sql
+-- Purpose: apply advanced analytical SQL to fraud behavior.
+--
+-- Expected techniques include CTEs, window functions, ranking, percentiles,
+-- cumulative metrics, and temporal comparisons where justified by the data.
