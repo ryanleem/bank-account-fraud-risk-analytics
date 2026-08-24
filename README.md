@@ -175,6 +175,6 @@ See [`data/README.md`](data/README.md) for data notes and [`results/fraud_findin
 
 ## Limitations
 
-The dataset is synthetic and privacy-preserving, so these results should not be treated the same as results from a live bank system.
+The dataset is synthetic and privacy-preserving, so the results should be treated as a portfolio analysis rather than a production banking fraud system.
 
-I also looked at months 6-7 during earlier exploration. I later rebuilt the final rule using months 0-5 and tested it again on months 6-7, but I do not call those months a perfectly untouched holdout.
+The risk score is rule-based and is meant to identify higher-risk groups, not replace a full fraud detection model.
