@@ -42,6 +42,14 @@ The fraud rate increased as the score increased:
 | 6 | 17.51% |
 | 7 | 42.55% |
 
+### Risk Score Visualization
+
+Each application receives points when it matches fraud-related signals I found in the data. A higher total score means the application matched more of those signals.
+
+![Fraud rate by risk score](assets/fraud_risk_score_explained.svg)
+
+The chart makes the main result easier to see: applications with higher scores had much higher fraud rates. A score of 5 or higher was the cutoff I used for the screening rule.
+
 Score 7 only contained 47 applications, so I would not treat that percentage as equally reliable as the larger groups.
 
 ## Later-Period Test
@@ -94,6 +102,8 @@ The analysis was done in PostgreSQL 17.
 
 ```text
 .
+├── assets/
+│   └── fraud_risk_score_explained.svg
 ├── data/
 │   └── README.md
 ├── docs/
