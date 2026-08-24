@@ -31,11 +31,24 @@ FROM segments
 CROSS JOIN overall
 ORDER BY lift_vs_overall DESC;
 
--- Compare each final risk-score bucket with the overall fraud rate
-WITH overall AS (
+-- Compare each risk-score bucket with the overall fraud rate
+WITH scored AS (
+    SELECT
+        fraud_bool,
+        (
+            CASE WHEN credit_risk_score > 269 THEN 2 ELSE 0 END
+            + CASE WHEN name_email_similarity <= 0.18 THEN 1 ELSE 0 END
+            + CASE WHEN device_distinct_emails_8w = 2 THEN 1 ELSE 0 END
+            + CASE WHEN phone_home_valid = 0 THEN 1 ELSE 0 END
+            + CASE WHEN email_is_free = 1 THEN 1 ELSE 0 END
+            + CASE WHEN has_other_cards = 0 THEN 1 ELSE 0 END
+        ) AS risk_score
+    FROM staging.raw_applications
+),
+overall AS (
     SELECT
         1.0 * SUM(CASE WHEN fraud_bool = 1 THEN 1 ELSE 0 END) / COUNT(*) AS overall_fraud_rate
-    FROM staging.v_application_risk_scores
+    FROM scored
 ),
 score_summary AS (
     SELECT
@@ -43,7 +56,7 @@ score_summary AS (
         COUNT(*) AS total_applications,
         SUM(CASE WHEN fraud_bool = 1 THEN 1 ELSE 0 END) AS fraud_applications,
         1.0 * SUM(CASE WHEN fraud_bool = 1 THEN 1 ELSE 0 END) / COUNT(*) AS score_fraud_rate
-    FROM staging.v_application_risk_scores
+    FROM scored
     GROUP BY risk_score
 )
 SELECT
